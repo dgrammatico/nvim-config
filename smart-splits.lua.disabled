@@ -1,0 +1,13 @@
+-- Seamless Ctrl-h/j/k/l between Neovim splits and WezTerm panes.
+-- Keymaps themselves live in lua/config/keymaps.lua (so LazyVim's defaults don't override them).
+return {
+  "mrjones2014/smart-splits.nvim",
+  lazy = false,
+  dependencies = {
+    { "smart-splits-nvim/backend-wezterm" }, -- WezTerm support is a separate plugin since smart-splits v3
+  },
+  opts = {
+    mux = { backend = "smart-splits-backend-wezterm" },
+    move = { at_edge = "stop" },
+  },
+}
